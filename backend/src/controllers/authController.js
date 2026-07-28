@@ -14,9 +14,8 @@ const REFRESH_TOKEN_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 const refreshCookieOptions = {
   httpOnly: true,
   secure: process.env.NODE_ENV === 'production',
-  sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'lax',
-  path: '/api/auth', // scope the cookie so it's only sent to auth endpoints,
-                      // not attached to every single API request
+  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+  path: '/api/auth',
   maxAge: REFRESH_TOKEN_TTL_MS,
 };
 
