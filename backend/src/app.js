@@ -15,7 +15,7 @@ app.use(cookieParser());
 // must exactly match your deployed frontend URL, and axios must set
 // withCredentials:true on the client (we'll do that in the frontend piece).
 app.use(cors({
-  origin: process.env.CLIENT_URL, // e.g. http://localhost:5173 in dev
+  origin: process.env.CLIENT_URL,
   credentials: true,
 }));
 
